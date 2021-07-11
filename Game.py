@@ -3,7 +3,7 @@ from tkinter import *
 from typing import TextIO
 import PIL
 from PIL import Image, ImageTk
-
+from InputHandle import *
 from TextureManager import TextureManager
 
 class Game:
@@ -17,16 +17,16 @@ class Game:
         self.__canvas.pack()
         self.__root.eval('tk::PlaceWindow . center')
         ###################################################
-
+        self.__input_handle = InputHandle()
         # Tải ảnh vào texture
         self.__texture = TextureManager()
-        self.__texture.LoadImage("/GitHub/Oop_test/anh/new_bg.png", "background")
-        self.__texture.LoadImage("/GitHub/Oop_test/anh/new_fg.png", "footground")
-        self.__texture.LoadImage("/GitHub/Oop_test/anh/bird.png", "bird")
+        self.__texture.LoadImage("/home/tucuman/FlappyBird-JavaScript/Oop_test/anh/new_bg.png", "background")
+        self.__texture.LoadImage("/home/tucuman/FlappyBird-JavaScript/Oop_test/anh/new_fg.png", "footground")
+        self.__texture.LoadImage("/home/tucuman/FlappyBird-JavaScript/Oop_test/anh/bird.png", "bird")
         ###################################################
-
-
         
+    def handle_event(self):
+        InputHandle.get_Key()
 
     def Update(self):
 

@@ -2,13 +2,13 @@
 from Game import*
 
 
-
 def main():
     
     game = Game()
     while True:
-        game.Update()
         game.Draw()
+        game.handle_event()
+        game.Update()
         game.GetCanvas().update()
 
 
